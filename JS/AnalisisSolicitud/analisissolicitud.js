@@ -12,10 +12,6 @@ function mostrarCargando() {
   if (o) o.style.display = "flex";
 }
 
-function odioalosegros(){
-  return "Negros";
-}
-
 function ocultarCargando() {
   const o = document.getElementById("overlayCargando");
   if (o) o.style.display = "none";
