@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Procesos Finalizados | Portal Contable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/normativas.css">
+</head>
+
+<body>
+    <!-- NAVBAR (misma estructura que otras páginas) -->
+    <nav class="navbar">
+        <h2>Procesos Finalizados</h2>
+
+        <div class="subbar">
+            <div class="acciones-superior">
+                <button class="logout" onclick="window.location.href='panel-auditor.html'">Regresar</button>
+            </div>
+            <!-- Menú desplegable -->
+            <div class="dropdown" id="userMenu">
+                <button class="dropbtn" id="menuBtn">⚙️ Opciones ▾</button>
+                <div class="dropdown-content" id="menuContent">
+                    <a href="#" id="logoutBtn" class="logout-option">🚪 Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contenedor">
+        <!-- Dentro del <section class="card"> -->
+        <section class="card">
+            <h3>Procesos con reporte generado</h3>
+
+            <div id="listaProcesos" class="lista-procesos">
+                <div class="cargando">Cargando procesos...</div>
+            </div>
+
+            <!-- CONTENEDOR DE MENSAJES -->
+        </section>
+    </main>
+
+    <main class="contenedor">
+        <div id="msgProcesos" class="mensaje-form oculto"></div>
+    </main>
+
+    <footer>&copy; 2025 Portal Contable | Todos los derechos reservados</footer>
+
+     <!-- Overlays reutilizables que tu JS puede usar -->
+  <div id="overlayMessage" aria-hidden="true" style="display:none;"></div>
+  <div id="overlayCargando" aria-hidden="true" style="display:none;">
+    <div class="box">
+      <div class="spinner" aria-hidden="true"></div>
+      <div class="text">Procesando...</div>
+    </div>
+  </div>
+  
+    <!-- 🔵 Modal de Confirmación Personalizado -->
+  <div id="modalConfirmacion" class="overlay-modal" style="display: none;">
+    <div class="modal-contenido">
+      <h3 id="tituloModal">Confirmación</h3>
+      <p id="modalMensaje"></p>
+
+      <div class="modal-botones">
+        <button id="btnAceptarModal" class="btn-aceptar">Aceptar</button>
+        <button id="btnCancelarModal" class="btn-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+    <script src="JS/Entrega/entrega.js" defer></script>
+</body>
+
+</html>

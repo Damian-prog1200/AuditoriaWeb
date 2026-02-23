@@ -1,0 +1,396 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F7F7;
+  margin: 0;
+  color: #2C2C2C;
+}
+
+/* 🔹 BARRA SUPERIOR PRINCIPAL */
+.navbar {
+  background-color: #1E3D59;
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* 🔹 Subbarra de botones y menú */
+.subbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.acciones-superior {
+  padding-right: 20px;
+}
+
+/* 🔹 Botones principales */
+.logout {
+  background-color: #C0392B;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: all 0.3s;
+}
+
+.logout:hover {
+  background-color: #962e23;
+}
+
+/* Ajuste para inputs */
+.info-grid input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.info-grid label {
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* --------------------------- */
+/*   CONTENEDOR PRINCIPAL      */
+/* --------------------------- */
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+/* --------------------------- */
+/*       TARJETAS BASE         */
+/* --------------------------- */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-weight: 600;
+  color: #1E3D59;
+}
+
+.card p {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.card button {
+  background: #1E3D59;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.card button:hover {
+  background: #C0392B;
+  transform: scale(1.05);
+}
+
+/* --------------------------- */
+/*    TARJETAS CON ESTILO      */
+/* --------------------------- */
+.card .icon {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Tarjetas de Solicitudes */
+.card.accepted {
+  border-left: 6px solid #27ae60;
+  background: linear-gradient(135deg, #ffffff 0%, #f6fff9 100%);
+}
+
+.card.accepted .icon {
+  color: #27ae60;
+}
+
+.card.pending {
+  border-left: 6px solid #f39c12;
+  background: linear-gradient(135deg, #ffffff 0%, #fffaf3 100%);
+}
+
+.card.pending .icon {
+  color: #f39c12;
+}
+
+/* Consulta de información */
+.card.consulta {
+  border-left: 6px solid #2980b9;
+  background: linear-gradient(135deg, #ffffff 0%, #f2f8ff 100%);
+}
+
+.card.consulta .icon {
+  color: #2980b9;
+}
+
+/* Procesar información */
+.card.procesar {
+  border-left: 6px solid #8e44ad;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f3ff 100%);
+}
+
+.card.procesar .icon {
+  color: #8e44ad;
+}
+
+/* Modificar información */
+.card.modificar {
+  border-left: 6px solid #16a085;
+  background: linear-gradient(135deg, #ffffff 0%, #f3fffb 100%);
+}
+
+.card.modificar .icon {
+  color: #16a085;
+}
+
+/* Generar reportes */
+.card.generar {
+  border-left: 6px solid #e67e22;
+  background: linear-gradient(135deg, #ffffff 0%, #fff7ef 100%);
+}
+
+.card.generar .icon {
+  color: #e67e22;
+}
+
+/* Actualizar reportes */
+.card.actualizar {
+  border-left: 6px solid #c0392b;
+  background: linear-gradient(135deg, #ffffff 0%, #fff2f2 100%);
+}
+
+.card.actualizar .icon {
+  color: #c0392b;
+}
+
+/* Tarjeta de Entrega de Reporte */
+.card.entrega {
+  border-left: 6px solid #27ae60;
+  background: linear-gradient(135deg, #ffffff 0%, #f6fff9 100%);
+}
+
+.card.entrega .icon {
+  color: #27ae60;
+}
+
+/* Tarjeta de Normativas Fiscales */
+.card.normas {
+  border-left: 6px solid #0d6efd;
+  background: linear-gradient(135deg, #ffffff 0%, #f3f7ff 100%);
+}
+
+.card.normas .icon {
+  color: #0d6efd;
+}
+
+/* --------------------------- */
+/*          FOOTER             */
+/* --------------------------- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1E3D59;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* 🔹 Contenedor */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 🔹 Botón principal */
+.dropbtn {
+  background-color: #FFC145;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropbtn:hover {
+  background-color: #e6ac26;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Ícono */
+.user-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 3px;
+  object-fit: cover;
+}
+
+/* 🔹 Menú desplegable */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #fff;
+  min-width: 220px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 100;
+  animation: fadeInMenu 0.25s ease;
+}
+
+/* 🔹 Mostrar cuando esté activo */
+.dropdown-content.show {
+  display: block;
+}
+
+/* 🔹 Enlaces del menú */
+.dropdown-content a {
+  color: #1E3D59;
+  padding: 0.9rem 1.2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: background 0.3s, padding-left 0.3s;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #f4f4f4;
+  padding-left: 1.6rem;
+}
+
+/* 🔹 Cerrar sesión destacada */
+.dropdown-content .logout-option {
+  color: #C0392B;
+  font-weight: 600;
+}
+
+.dropdown-content .logout-option:hover {
+  background-color: #ffe5e5;
+}
+
+/* 🔹 Animación */
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Modal Overlay General ===== */
+.overlay-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* ===== Contenedor del Modal ===== */
+.modal-contenido {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  width: 360px;
+  text-align: center;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.modal-contenido h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-contenido p {
+  margin: 15px 0;
+  font-size: 15px;
+}
+
+/* ===== Botones ===== */
+.modal-botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn-aceptar,
+.btn-cancelar {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-aceptar {
+  background: #4CAF50;
+  color: white;
+}
+
+.btn-cancelar {
+  background: #d9534f;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}

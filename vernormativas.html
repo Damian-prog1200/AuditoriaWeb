@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Normativas Fiscales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/normativas.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2>Normativas Fiscales</h2>
+
+        <div class="subbar">
+            <div class="acciones-superior">
+                <button class="logout" onclick="window.location.href='panel-auditor.html'">Regresar</button>
+            </div>
+            <!-- Menú desplegable -->
+            <div class="dropdown" id="userMenu">
+                <button class="dropbtn" id="menuBtn">⚙️ Opciones ▾</button>
+                <div class="dropdown-content" id="menuContent">
+                    <a href="#" id="logoutBtn" class="logout-option">🚪 Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contenedor">
+        <!-- 🔘 Botones de acciones -->
+        <div class="acciones-normativas">
+            <button id="btnAgregar" class="btn-agregar">➕ Agregar normativa</button>
+        </div>
+
+        <!-- Listado de normativas -->
+        <section class="card">
+            <h3>Listado de Normativas</h3>
+            <ul class="lista-normas" id="listaNormas">
+                <!-- Se llenará dinámicamente con JS -->
+            </ul>
+        </section>
+
+        <!-- Visor PDF -->
+        <section id="visorContainer" style="display:none;" class="visor">
+            <iframe id="visor" title="Visor de Normativa PDF"></iframe>
+        </section>
+    </main>
+
+    <footer>&copy; 2025 Portal Contable | Todos los derechos reservados</footer>
+
+    <script src="JS/NormativasFiscales/NormativaService.js"></script>
+</body>
+
+</html>

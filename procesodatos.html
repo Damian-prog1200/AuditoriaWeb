@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proceso de Auditoría | Portal Contable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/procesodatos.css" />
+    <script defer src="JS/Produccion/procesoAuditoria.js"></script>
+    <script defer src="JS/Produccion/procesodatos.js"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2 style="color: aliceblue;">Procesar Datos</h2>
+
+        <div class="subbar">
+            <div class="acciones-superior">
+                <button class="logout" onclick="window.location.href='panel-auditor.html'">Regresar</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="main-container">
+        <!-- VISOR PDF -->
+        <div class="pdf-viewer">
+            <iframe id="visorPDF" width="100%" height="600px" style="border:none;"></iframe>
+        </div>
+
+        <!-- HERRAMIENTAS DE AUDITORÍA -->
+        <div class="audit-tools">
+            <div>
+                <h3>Herramientas de Cálculo</h3>
+                <div class="calc-section">
+                    <label for="ingresos">Ingresos declarados:</label>
+                    <input type="number" id="ingresos" placeholder="$ Monto en pesos mexicanos">
+
+                    <label for="gastos">Gastos deducibles:</label>
+                    <input type="number" id="gastos" placeholder="$ Monto en pesos mexicanos">
+
+                    <label for="impuesto">Tasa de impuesto (%)</label>
+                    <input type="number" id="impuesto" placeholder="Ejemplo: 16">
+
+                    <label for="resultado">Resultado del análisis:</label>
+                    <input type="text" id="resultado" readonly placeholder="Resultado automático">
+                </div>
+
+                <button class="editar" onclick="calcularAuditoria()">Calcular Impuestos</button>
+            </div>
+
+            <div class="comments">
+                <h3>Observaciones del Auditor</h3>
+                <textarea id="comentarios" placeholder="Escriba sus observaciones aquí..."></textarea>
+            </div>
+
+            <div class="action-buttons">
+                <button class="accept">✅ Terminar Auditoria</button>
+                <button class="reject">❌ Pausar Auditoría</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Auditorías en Línea | Todos los derechos reservados
+    </footer>
+    <!-- Overlays reutilizables que tu JS puede usar -->
+  <div id="overlayMessage" aria-hidden="true" style="display:none;"></div>
+  <div id="overlayCargando" aria-hidden="true" style="display:none;">
+    <div class="box">
+      <div class="spinner" aria-hidden="true"></div>
+      <div class="text">Procesando...</div>
+    </div>
+  </div>
+  
+    <!-- 🔵 Modal de Confirmación Personalizado -->
+  <div id="modalConfirmacion" class="overlay-modal" style="display: none;">
+    <div class="modal-contenido">
+      <h3 id="tituloModal">Confirmación</h3>
+      <p id="modalMensaje"></p>
+
+      <div class="modal-botones">
+        <button id="btnAceptarModal" class="btn-aceptar">Aceptar</button>
+        <button id="btnCancelarModal" class="btn-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

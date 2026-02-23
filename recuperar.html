@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Contraseña | Portal Contable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/iniciosesion.css">
+</head>
+
+<body>
+  <div class="login-wrapper">
+    <div class="login-card">
+      <h1>Recuperar Contraseña</h1>
+      <p class="subtitle">Introduce tu correo y te enviaremos un enlace</p>
+
+      <form id="recoverForm">
+        <input type="email" id="emailrecupera" placeholder="ejemplo@empresa.com">
+        <button type="submit">Enviar enlace</button>
+      </form>
+
+      <!-- 🔔 Contenedor del mensaje -->
+      <div id="mensajeRecupera" class="mensaje-form oculto"></div>
+
+      <div class="acciones">
+        <a href="index.html">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/sesion/verificarSesion.js"></script>
+  <script src="JS/InicioSesion/recuperacion.js"></script>
+</body>
+
+</html>

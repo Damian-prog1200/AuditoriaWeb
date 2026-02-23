@@ -1,0 +1,711 @@
+/* ===========================
+   ESTILO GENERAL
+=========================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    color: #333;
+}
+
+.navbar {
+    background-color: #1d3557;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.navbar h2 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.btn-regresar {
+    background-color: #e63946;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-regresar:hover {
+    background-color: #c1121f;
+}
+
+/* ===========================
+   CONTENEDOR PRINCIPAL
+=========================== */
+.contenedor {
+    max-width: 1000px;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+/* ===========================
+   TARJETAS Y FORMULARIOS
+=========================== */
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+}
+
+.card h3 {
+    color: #1d3557;
+    border-bottom: 2px solid #457b9d;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.formulario label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.formulario input[type="text"],
+.formulario input[type="file"],
+.formulario textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: #457b9d;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* ===========================
+   BOTONES
+=========================== */
+.btn-enviar {
+    margin-top: 1.5rem;
+    background-color: #457b9d;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #1d3557;
+}
+
+/* ===========================
+   LISTA DE NORMATIVAS
+=========================== */
+.lista-normas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-normas li {
+    margin: 0.5rem 0;
+    background-color: #f0f4f8;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.lista-normas li:hover {
+    background-color: #e0ebf4;
+}
+
+.lista-normas a {
+    text-decoration: none;
+    color: #1d3557;
+    font-weight: 500;
+}
+
+/* ===========================
+   VISOR PDF
+=========================== */
+.visor {
+    background: white;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.visor iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1d3557;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 1rem;
+    }
+
+    .visor iframe {
+        height: 400px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .btn-regresar {
+        width: 100%;
+    }
+}
+
+/* ====== ESTILO GENERAL DE BOTONES ====== */
+.btn-enviar {
+    margin-top: 1.5rem;
+    background-color: #457b9d;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 500;
+}
+
+.btn-enviar:hover {
+    background-color: #1d3557;
+}
+
+/* 🔹 CONTENEDOR DEL MENÚ DESPLEGABLE */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 🔹 Botón principal del menú */
+.dropbtn {
+  background-color: #FFC145;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropbtn:hover {
+  background-color: #e6ac26;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Contenido del menú desplegable */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #fff;
+  min-width: 220px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 100;
+  animation: fadeInMenu 0.25s ease;
+}
+
+/* Mostrar menú activo */
+.dropdown-content.show {
+  display: block;
+}
+
+/* 🔹 Enlaces del menú */
+.dropdown-content a {
+  color: #1E3D59;
+  padding: 0.9rem 1.2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: background 0.3s, padding-left 0.3s;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #f4f4f4;
+  padding-left: 1.6rem;
+}
+
+/* 🔹 Enlace de cierre de sesión */
+.dropdown-content .logout-option {
+  color: #C0392B;
+  font-weight: 600;
+}
+
+.dropdown-content .logout-option:hover {
+  background-color: #ffe5e5;
+}
+
+/* =============================
+   ANIMACIONES
+============================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+  background-color: #1E3D59;
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* 🔹 Subbarra de botones y menú */
+.subbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.acciones-superior {
+  padding-right: 20px;
+}
+
+/* 🔹 Botones principales */
+.logout {
+  background-color: #C0392B;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: all 0.3s;
+}
+
+.logout:hover {
+  background-color: #962e23;
+}
+
+/* 🔘 Contenedor de botones alineado a la derecha */
+.acciones-normativas {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 1.5rem 1rem;
+}
+
+/* 🎨 Estilo general de botones */
+.btn-agregar,
+.btn-modificar {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🟢 Botón "Agregar" — verde suave */
+.btn-agregar {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.btn-agregar:hover {
+  background-color: #43a047;
+  transform: translateY(-1px);
+}
+
+/* 🟡 Botón "Modificar" — azul suave con acento ámbar */
+.btn-modificar {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+.btn-modificar:hover {
+  background-color: #1e88e5;
+  transform: translateY(-1px);
+}
+
+/* 📋 Ajuste visual del listado */
+.lista-normas li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.lista-normas a {
+  color: #1565c0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.lista-normas a:hover {
+  text-decoration: underline;
+  color: #0d47a1;
+}
+
+.mensaje-form {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mensaje-form.oculto {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+/* ✅ Éxito */
+.mensaje-form.exito {
+  background-color: #e9f7ef;
+  border: 1px solid #28a745;
+  color: #1e7e34;
+  box-shadow: 0 2px 6px rgba(40, 167, 69, 0.2);
+}
+
+/* ❌ Error */
+.mensaje-form.error {
+  background-color: #fdecea;
+  border: 1px solid #e74c3c;
+  color: #c0392b;
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.2);
+}
+
+/* ⚠️ Advertencia */
+.mensaje-form.advertencia {
+  background-color: #fff9e6;
+  border: 1px solid #f1c40f;
+  color: #8a6d3b;
+  box-shadow: 0 2px 6px rgba(241, 196, 15, 0.2);
+}
+
+/* 🎨 Botón "Ver PDF" */
+.btn-ver-pdf {
+  background: linear-gradient(135deg, #007bff, #0056d2);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  margin-top: 6px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-ver-pdf:hover {
+  background: linear-gradient(135deg, #0056d2, #0041a8);
+  transform: scale(1.05);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔒 Oculto inicialmente */
+.visor {
+  display: none;
+  position: relative;
+  margin-top: 20px;
+  transition: all 0.4s ease;
+}
+
+/* 📘 Cuando se muestra */
+.visor.visible {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+/* 🧭 Estilo del iframe */
+#visor {
+  width: 100%;
+  height: 600px;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ✨ Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-modificar {
+  background-color: #007bff; /* azul */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-modificar:hover {
+  background-color: #0056b3;
+}
+
+/* ======================================
+   TARJETA DE PROCESO FINALIZADO
+====================================== */
+.card-proceso {
+    background: #ffffff;
+    border-left: 6px solid #1d3557;
+    padding: 1.5rem;
+    border-radius: 14px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: fadeIn 0.3s ease;
+    border-color: #0041a8;
+}
+
+.card-proceso h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    color: #1d3557;
+    font-weight: bold;
+}
+
+.card-proceso p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.card-proceso p.muted {
+    color: #555;
+    font-size: 0.85rem;
+}
+
+/* PDF button */
+.btn-verpdf {
+    display: inline-block;
+    background-color: #457b9d;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.btn-verpdf:hover {
+    background-color: #1d3557;
+    transform: scale(1.05);
+}
+
+/* Divider */
+.card-proceso hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1rem 0;
+}
+
+/* Contenedor de botones */
+.acciones-proceso {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Botón primario */
+.btn.primario {
+    background-color: #2a9d8f; 
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.btn.primario:hover {
+    background-color: #207568;
+    transform: scale(1.05);
+}
+
+/* Botón secundario */
+.btn.secundario {
+    background-color: #e63946; 
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.btn.secundario:hover {
+    background-color: #c1121f;
+    transform: scale(1.05);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   BADGES PARA ID PROCESO Y SOLICITUD
+=========================== */
+
+.badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    display: inline-block;
+}
+
+.badge-proceso {
+    background-color: #1d3557; /* Azul oscuro */
+}
+
+.badge-solicitud {
+    background-color: #457b9d; /* Azul claro */
+}
+
+/* ===== Modal Overlay General ===== */
+.overlay-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+
+/* ===== Contenedor del Modal ===== */
+.modal-contenido {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  width: 360px;
+  text-align: center;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.modal-contenido h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-contenido p {
+  margin: 15px 0;
+  font-size: 15px;
+}
+
+/* ===== Botones ===== */
+.modal-botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn-aceptar,
+.btn-cancelar {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-aceptar {
+  background: #4CAF50;
+  color: white;
+}
+
+.btn-cancelar {
+  background: #d9534f;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}

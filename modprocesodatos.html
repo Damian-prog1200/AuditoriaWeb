@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Proceso de Auditoría | Portal Contable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/procesodatos.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2 style="color: white;">Editar Proceso de Auditoría</h2>
+
+        <div class="subbar">
+            <div class="acciones-superior">
+                <button class="logout" onclick="window.location.href='panel-auditor.html'">Regresar</button>
+            </div>
+            <div class="dropdown" id="userMenu">
+                <button class="dropbtn" id="menuBtn">Opciones</button>
+                <div class="dropdown-content" id="menuContent">
+                    <a href="perfilAudi.html">👤 Mi Perfil</a>
+                    <a href="index.html" class="logout-option">🚪 Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="main-container">
+        <div class="card">
+            <h3>Datos del Proceso</h3>
+            <form class="formulario" id="formEdicion">
+                <label for="nombreCliente">Nombre del cliente:</label>
+                <input type="text" id="nombreCliente" placeholder="Ejemplo: Empresa XYZ S.A. de C.V." required>
+
+                <label for="rfc">RFC:</label>
+                <input type="text" id="rfc" placeholder="RFC del contribuyente" required>
+
+                <label for="periodo">Periodo fiscal:</label>
+                <input type="text" id="periodo" placeholder="Ejemplo: Enero - Marzo 2025" required>
+
+                <hr>
+
+                <h3>Datos Financieros</h3>
+                <label for="ingresos">Ingresos declarados:</label>
+                <input type="number" id="ingresos" placeholder="$ Monto en pesos mexicanos" required>
+
+                <label for="gastos">Gastos deducibles:</label>
+                <input type="number" id="gastos" placeholder="$ Monto en pesos mexicanos" required>
+
+                <label for="impuesto">Tasa de impuesto (%)</label>
+                <input type="number" id="impuesto" placeholder="Ejemplo: 16" required>
+
+                <label for="resultado">Resultado del análisis:</label>
+                <input type="text" id="resultado" readonly placeholder="Se calculará automáticamente">
+
+                <button type="button" class="editar" onclick="calcularAuditoria()">Calcular Resultado</button>
+
+                <hr>
+
+                <h3>Observaciones del Auditor</h3>
+                <textarea id="comentarios"
+                    placeholder="Escriba aquí las observaciones o hallazgos relevantes..."></textarea>
+
+                <div class="action-buttons">
+                    <button type="submit" class="accept">💾 Guardar Cambios y Acualizar reporte</button>
+                    <button type="button" class="reject" onclick="window.location.href='panel-auditor.html'">❌
+                        Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="pdf-viewer">
+            <h3>Documento del Cliente</h3>
+            <iframe src="documentos/solicitud_cliente.pdf" title="Documento del Cliente"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Auditorías en Línea | Todos los derechos reservados
+    </footer>
+
+    <script>
+        function calcularAuditoria() {
+            const ingresos = parseFloat(document.getElementById("ingresos").value) || 0;
+            const gastos = parseFloat(document.getElementById("gastos").value) || 0;
+            const impuesto = parseFloat(document.getElementById("impuesto").value) || 0;
+
+            const utilidad = ingresos - gastos;
+            const totalImpuesto = utilidad * (impuesto / 100);
+            const resultado = utilidad - totalImpuesto;
+
+            document.getElementById("resultado").value = `$ ${resultado.toFixed(2)}`;
+        }
+
+        document.getElementById("formEdicion").addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("✅ Los datos del proceso fueron guardados correctamente.");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo de Producción</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/produccion.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <h2>Bienvenido Auditor</h2>
+
+    <div class="subbar">
+      <div class="dropdown" id="userMenu">
+        <button class="dropbtn" id="menuBtn">⚙️ Opciones ▾</button>
+        <div class="dropdown-content" id="menuContent">
+          <a href="#" id="logoutBtn" class="logout-option">🚪 Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <section class="card accepted">
+      <div class="icon">✅</div>
+      <h2>Ver Solicitudes Aceptadas</h2>
+      <p>Consulta todas las solicitudes que han sido aprobadas y están listas para iniciar el proceso de auditoría.</p>
+      <button onclick="window.location.href='aceptadas.html'">Ver Solicitudes</button>
+    </section>
+
+    <section class="card pending">
+      <div class="icon">🕓</div>
+      <h2>Ver Solicitudes Pendientes</h2>
+      <p>Revisa las solicitudes que aún no han sido procesadas o están esperando revisión por parte del auditor.</p>
+      <button onclick="window.location.href='solicitudes.html'">Ver Solicitudes</button>
+    </section>
+
+    <section class="card procesar">
+      <div class="icon">⚙️</div>
+      <h2>Procesar información</h2>
+      <p>El auditor puede procesar la información recibida mediante los algoritmos del sistema.</p>
+      <button onclick="handleProcesarClick(event)">Acceder</button>
+    </section>
+
+    <section class="card entrega">
+      <div class="icon">📤</div>
+      <h2>Entrega de Reporte</h2>
+      <p>Envía o consulta los reportes finales generados por el sistema contable y aprueba su recepción.</p>
+      <button onclick="window.location.href='entrega.html'">Acceder</button>
+    </section>
+
+    <section class="card normas">
+      <div class="icon">⚖️</div>
+      <h2>Normativas Fiscales Vigentes</h2>
+      <p>Consulta, agrega o modifica las normativas fiscales aplicables a los procesos contables y auditorías.</p>
+      <button onclick="window.location.href='vernormativas.html'">Ver Normativas</button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Auditorías en Línea | Todos los derechos reservados
+  </footer>
+
+  <script src="JS/AnalisisSolicitud/salir.js"></script>
+  <script src="JS/Produccion/panelauditor.js"></script>
+</body>
+
+</html>

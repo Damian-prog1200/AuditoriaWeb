@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restablecer Contraseña | Portal Contable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/iniciosesion.css">
+</head>
+
+<body>
+  <div class="login-wrapper">
+    <div class="login-card">
+      <h1>Restablecer Contraseña</h1>
+      <p class="subtitle">Ingresa la nueva contraseña</p>
+
+      <form id="resetForm">
+        <input type="hidden" id="token" value="">
+        <label for="nuevaContrasena">Nueva contraseña</label>
+        <input type="password" id="nuevaPass" placeholder="Nueva contraseña" required>
+        <button type="submit">Guardar nueva contraseña</button>
+      </form>
+
+      <!-- 🔔 Contenedor del mensaje -->
+      <div id="mensajeReset" class="mensaje-form oculto"></div>
+
+      <div class="acciones">
+        <a href="index.html">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/InicioSesion/verificarsesion.js"></script>
+  <script src="JS/InicioSesion/recuperacion.js"></script>
+
+  <script>
+    // 📜 Obtener el token de la URL (?token=XXXXX)
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById("token").value = urlParams.get("token") || "";
+  </script>
+</body>
+
+</html>

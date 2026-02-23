@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Solicitud</title>
+  <link rel="stylesheet" href="CSS/analisissolicitud.css">
+  <script src="JS/AnalisisSolicitud/detalleSolicitud.js"></script>
+</head>
+<body>
+  <nav class="navbar auditor">
+    <h2>Detalle de Solicitud</h2>
+    <button onclick="window.history.back()" class="logout1">⬅ Volver</button>
+  </nav>
+
+  <main class="detalle-container">
+    <!-- Lado izquierdo (PDF) -->
+    <section class="detalle-izquierda">
+      <iframe id="pdfViewer" width="100%" height="100%" style="border:none;"></iframe>
+    </section>
+
+    <!-- Lado derecho (datos de la solicitud) -->
+    <section class="detalle-derecha">
+      <h3>Información de la Solicitud</h3>
+      <div class="detalle-info">
+        <p><strong>ID:</strong> <span id="solicitudId">Cargando...</span></p>
+        <p><strong>Cliente:</strong> <span id="solicitudCliente">Cargando...</span></p>
+        <p><strong>Tipo de servicio:</strong> <span id="solicitudTipo">Cargando...</span></p>
+        <p><strong>Fecha de creación:</strong> <span id="solicitudFecha">Cargando...</span></p>
+        <p><strong>Detalles del cliente:</strong> <span id="solicitudDetalle">Cargando...</span></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

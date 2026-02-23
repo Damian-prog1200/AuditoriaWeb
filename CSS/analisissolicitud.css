@@ -1,0 +1,765 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F7F7;
+  margin: 0;
+  color: #2C2C2C;
+}
+
+.navbar.auditor {
+  background-color: #2F4858;
+}
+
+/* NAVBAR SUPERIOR */
+.navbar {
+  background-color: #1E3D59;
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.acciones-superior {
+  padding-right: 20px;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.navbar button {
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: all 0.3s;
+}
+
+.logout {
+  background-color: #C0392B;
+  color: #fff;
+}
+
+.logout:hover {
+  background-color: #962e23;
+}
+
+.logout1 {
+  background-color: #C0392B;
+  color: #fff;
+}
+
+.logout1:hover {
+  background-color: #962e23;
+}
+
+/* 🔹 Contenedor */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 🔹 Botón principal */
+.dropbtn {
+  background-color: #FFC145;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropbtn:hover {
+  background-color: #e6ac26;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Ícono */
+.user-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 3px;
+  object-fit: cover;
+}
+
+/* 🔹 Menú desplegable */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #fff;
+  min-width: 220px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 100;
+  animation: fadeInMenu 0.25s ease;
+}
+
+/* 🔹 Mostrar cuando esté activo */
+.dropdown-content.show {
+  display: block;
+}
+
+/* 🔹 Enlaces del menú */
+.dropdown-content a {
+  color: #1E3D59;
+  padding: 0.9rem 1.2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: background 0.3s, padding-left 0.3s;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #f4f4f4;
+  padding-left: 1.6rem;
+}
+
+/* 🔹 Cerrar sesión destacada */
+.dropdown-content .logout-option {
+  color: #C0392B;
+  font-weight: 600;
+}
+
+.dropdown-content .logout-option:hover {
+  background-color: #ffe5e5;
+}
+
+/* 🔹 Animación */
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CONTENIDO PRINCIPAL */
+.main-content {
+  padding: 2rem;
+}
+
+.main-content h3 {
+  color: #1E3D59;
+  margin-bottom: 1rem;
+}
+
+/* TABLA */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+th,
+td {
+  padding: 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #1E3D59;
+  color: white;
+  font-weight: 500;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+td {
+  white-space: nowrap;
+  /* evita que los botones se apilen */
+  text-align: center;
+  /* centra horizontalmente */
+  vertical-align: middle;
+  /* centra verticalmente */
+  max-width: 800px;
+  /* evita que la columna crezca demasiado */
+  overflow: hidden;
+}
+
+td button {
+  padding: 0.6rem 0.8rem;
+  /* más compactos */
+  font-size: 1rem;
+  /* texto más pequeño */
+  border-radius: 10px;
+  margin: 0 5px;
+  /* pequeño espacio entre ellos */
+  display: inline-block;
+  /* asegura disposición en fila */
+  max-width: 120px;
+  /* ancho máximo uniforme */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* si el texto es largo, lo corta */
+  white-space: nowrap;
+}
+
+th,
+td {
+  text-align: center;
+  /* centra el contenido horizontalmente */
+  vertical-align: middle;
+  /* centra verticalmente */
+}
+
+button.accion {
+  background-color: #1E3D59;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.accion:hover {
+  background-color: #204B70;
+}
+
+button.accion1 {
+  background-color: #9a1d1d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.accion1:hover {
+  background-color: #C0392B;
+}
+
+button.accion2 {
+  background-color: #FFC145;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.accion2:hover {
+  background-color: #cb9935;
+}
+
+/* FORMULARIO DE NUEVA SOLICITUD */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-card {
+  background-color: #FFFFFF;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 450px;
+  border-top: 6px solid #1E3D59;
+}
+
+h1 {
+  color: #1E3D59;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+button {
+  margin-top: 1.5rem;
+  background-color: #1E3D59;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #204B70;
+}
+
+.acciones {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.acciones a {
+  color: #1E3D59;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.acciones a:hover {
+  color: #FFC145;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1E3D59;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* Overlay mensaje central (aprobada / rechazada) */
+#overlayMessage {
+  position: fixed;
+  inset: 0;
+  /* top:0;right:0;bottom:0;left:0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  pointer-events: none;
+  /* por defecto no interfiere; el backdrop sí */
+}
+
+#overlayMessage .overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+#overlayMessage .overlay-box {
+  max-width: 760px;
+  width: calc(100% - 40px);
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  border-left: 6px solid #4caf50;
+  /* por defecto color aprobación */
+}
+
+#overlayMessage .overlay-box .overlay-content p {
+  margin: 0;
+  font-weight: 600;
+  color: #1b5e20;
+  text-align: center;
+}
+
+/* Si quieres estilo diferente para rechazada, el JS puede cambiar la clase; 
+   aquí el color por defecto es Aprobada (verde). Para rechazada, puedes
+   usar .overlay-box.rechazada { border-left-color: #c0392b; color: #c0392b; } */
+#overlayMessage .overlay-box.rechazada {
+  border-left-color: #c0392b;
+}
+
+#overlayMessage .overlay-box.rechazada .overlay-content p {
+  color: #641b1b;
+}
+
+/* Puntito de notificación en el botón Ver detalles */
+button .notif-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #00ff5e;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+/* Ajustes responsivos y accesibilidad */
+@media (max-width: 560px) {
+  #overlayMessage .overlay-box {
+    padding: 14px;
+  }
+
+  button .notif-dot {
+    width: 8px;
+    height: 8px;
+    margin-right: 6px;
+  }
+}
+
+/* === Overlay base === */
+#overlayMessage {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+}
+
+/* Caja del mensaje */
+#overlayMessage .overlay-box {
+  color: white;
+  padding: 1.8rem 2rem;
+  border-radius: 12px;
+  max-width: 420px;
+  text-align: center;
+  font-size: 1.05rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Colores según tipo */
+#overlayMessage.aprobada .overlay-box {
+  background: rgba(40, 167, 69, 0.85);
+  /* Verde */
+}
+
+#overlayMessage.rechazada .overlay-box {
+  background: rgba(220, 53, 69, 0.85);
+  /* Rojo */
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Overlay de carga (colocado arriba de todo) */
+#overlayCargando {
+  position: fixed;
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 3000;
+  backdrop-filter: blur(2px);
+}
+
+#overlayCargando .box {
+  background: #fff;
+  padding: 18px 22px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+  max-width: 90%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#overlayCargando .text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+/* Overlay de carga y cancelación */
+#overlayCargando {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 3000;
+  backdrop-filter: blur(2px);
+}
+
+#overlayCargando .box {
+  background: #fff;
+  padding: 18px 22px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 240px;
+}
+
+#overlayCargando .spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #ddd;
+  border-top-color: #0a66c2;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#overlayCargando .text {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+/* ===== Overlay de motivo de rechazo ===== */
+#overlayMotivoRechazo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#overlayMotivoRechazo .overlay-content {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#overlayMotivoRechazo h3 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #b00;
+}
+
+#motivoRechazoInput {
+  resize: none;
+  width: 100%;
+  padding: 8px;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-height: 80px;
+}
+
+.overlay-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.overlay-buttons .btn-cancelar,
+.overlay-buttons .btn-enviar {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.overlay-buttons .btn-cancelar {
+  background: #ccc;
+  color: #333;
+}
+
+.overlay-buttons .btn-enviar {
+  background: #c0392b;
+  color: #fff;
+}
+/* ===== Detalle de Solicitud ===== */
+.detalle-container {
+  display: flex;
+  height: calc(100vh - 70px);
+  background: #f9f9f9;
+}
+
+/* Lado izquierdo (PDF) */
+.detalle-izquierda {
+  flex: 1.5;
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.detalle-izquierda iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Lado derecho (datos) */
+.detalle-derecha {
+  flex: 1;
+  background: #fff;
+  padding: 2rem;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detalle-derecha h3 {
+  color: #1E3D59;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.detalle-info p {
+  font-size: 1rem;
+  margin: 0.6rem 0;
+  line-height: 1.5;
+}
+
+.detalle-info strong {
+  color: #1E3D59;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .detalle-container {
+    flex-direction: column;
+  }
+
+  .detalle-izquierda {
+    flex: none;
+    height: 50vh;
+  }
+
+  .detalle-derecha {
+    box-shadow: none;
+  }
+}
+/* ===== Modal Overlay General ===== */
+.overlay-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  overflow: "hidden";
+}
+
+
+/* ===== Contenedor del Modal ===== */
+.modal-contenido {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  width: 360px;
+  text-align: center;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.modal-contenido h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-contenido p {
+  margin: 15px 0;
+  font-size: 15px;
+}
+
+/* ===== Botones ===== */
+.modal-botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn-aceptar,
+.btn-cancelar {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-aceptar {
+  background: #4CAF50;
+  color: white;
+}
+
+.btn-cancelar {
+  background: #d9534f;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,433 @@
+/* =============================
+   ESTILOS GENERALES
+============================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F7F7;
+  margin: 0;
+  color: #2C2C2C;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: #1E3D59;
+}
+
+/* =============================
+   TARJETA DE PERFIL
+============================= */
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 90vh;
+  padding-top: 3rem;
+}
+
+.profile-card {
+  background-color: #FFFFFF;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 700px;
+  border-top: 6px solid #1E3D59;
+  animation: fadeIn 0.6s ease;
+}
+
+/* =============================
+   MODO VISUALIZAR PERFIL
+============================= */
+.profile-card.view {
+  text-align: center;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #FFC145;
+  margin-bottom: 1rem;
+}
+
+.rol {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.info-section h3 {
+  color: #1E3D59;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+
+.info-grid p {
+  background-color: #f9f9f9;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.acciones {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+button.editar {
+  background-color: #1E3D59;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+button.editar:hover {
+  background-color: #204B70;
+}
+
+/* =============================
+   MODO EDITAR PERFIL
+============================= */
+.profile-card.edit {
+  text-align: left;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #1E3D59;
+}
+
+form input {
+  width: 96%;
+  padding: 0.8rem;
+  margin-top: 0.3rem;
+  border: 1px solid #CCC;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus {
+  border-color: #1E3D59;
+  box-shadow: 0 0 6px rgba(30, 61, 89, 0.3);
+  outline: none;
+}
+
+form .acciones {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+form button {
+  background-color: #1E3D59;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+  justify-content: right;
+}
+
+form button:hover {
+  background-color: #204B70;
+}
+
+button.cancelar {
+  background-color: #777;
+}
+
+button.cancelar:hover {
+  background-color: #555;
+}
+
+/* =============================
+   FOOTER
+============================= */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1E3D59;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* =============================
+   ANIMACIONES
+============================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.guardar,
+.cancelar {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.guardar {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.guardar:hover {
+  background-color: #0056b3;
+}
+
+.cancelar {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.cancelar:hover {
+  background-color: #a71d2a;
+}
+
+/* 🔹 BARRA SUPERIOR PRINCIPAL */
+.navbar {
+  background-color: #1E3D59;
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* 🔹 Subbarra de botones y menú */
+.subbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.acciones-superior {
+  padding-right: 20px;
+}
+
+/* 🔹 Botones principales */
+.logout {
+  background-color: #C0392B;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: all 0.3s;
+}
+
+.logout:hover {
+  background-color: #962e23;
+}
+
+/* 🔹 CONTENEDOR DEL MENÚ DESPLEGABLE */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 🔹 Botón principal del menú */
+.dropbtn {
+  background-color: #FFC145;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropbtn:hover {
+  background-color: #e6ac26;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Contenido del menú desplegable */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #fff;
+  min-width: 220px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 100;
+  animation: fadeInMenu 0.25s ease;
+}
+
+/* Mostrar menú activo */
+.dropdown-content.show {
+  display: block;
+}
+
+/* 🔹 Enlaces del menú */
+.dropdown-content a {
+  color: #1E3D59;
+  padding: 0.9rem 1.2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: background 0.3s, padding-left 0.3s;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #f4f4f4;
+  padding-left: 1.6rem;
+}
+
+/* 🔹 Enlace de cierre de sesión */
+.dropdown-content .logout-option {
+  color: #C0392B;
+  font-weight: 600;
+}
+
+.dropdown-content .logout-option:hover {
+  background-color: #ffe5e5;
+}
+
+/* 🔹 Animación de aparición */
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ajuste para inputs */
+.info-grid input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.info-grid label {
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* Estilos complementarios para la tabla de solicitudes */
+.solicitudes-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.solicitudes-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1000px;
+    padding: 25px;
+}
+
+.solicitudes-card h3 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Poppins", sans-serif;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f2f8ff;
+}
+
+.acciones-tabla {
+    text-align: center;
+}
+
+.ver-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ver-btn:hover {
+    background-color: #1e7e34;
+}

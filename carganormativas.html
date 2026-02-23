@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Normativa Fiscal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/normativas.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2>Agrega las Normativas Fiscales</h2>
+
+        <div class="subbar">
+            <div class="acciones-superior">
+                <button class="logout" onclick="window.location.href='vernormativas.html'">Regresar</button>
+            </div>
+            <!-- Menú desplegable -->
+            <div class="dropdown" id="userMenu">
+                <button class="dropbtn" id="menuBtn">⚙️ Opciones ▾</button>
+                <div class="dropdown-content" id="menuContent">
+                    <a href="perfil.html">👤 Mi Perfil</a>
+                    <a href="#" id="logoutBtn" class="logout-option">🚪 Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contenedor">
+        <section class="card">
+            <h3>Formulario de Carga</h3>
+            <form class="formulario" id="formSubida">
+                <label for="nombreNorma">Nombre de la normativa:</label>
+                <input type="text" id="nombreNorma" placeholder="Ejemplo: Ley del ISR 2025">
+
+                <label for="descripcion">Descripción breve:</label>
+                <textarea id="descripcion" placeholder="Breve resumen de la normativa..."></textarea>
+
+                <label for="archivo">Seleccionar archivo PDF:</label>
+                <input type="file" id="archivo" accept=".pdf">
+
+                <button type="submit" class="btn-enviar">Subir Normativa</button>
+                <div id="msgForm" class="mensaje-form oculto"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer>&copy; 2025 Portal Contable | Todos los derechos reservados</footer>
+    <script src="JS/NormativasFiscales/NormativaService.js"></script>
+</body>
+
+</html>

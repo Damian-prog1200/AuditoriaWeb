@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil Personal | Portal Contable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/perfil.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+<nav class="navbar">
+    <h2>Bienvenido Auditor</h2>
+
+    <div class="subbar">
+      <div class="acciones-superior">
+        <button class="logout" onclick="window.location.href='panel-cliente.html'">Regresar</button>
+      </div>
+      <!-- Menú desplegable -->
+      <div class="dropdown" id="userMenu">
+        <button class="dropbtn" id="menuBtn">Opciones</button>
+        <div class="dropdown-content" id="menuContent">
+          <a href="perfilAudi.html">👤 Mi Perfil</a>
+          <a href="ayuda.html">❓ Acerca de</a>
+          <a href="index.html" class="logout-option">🚪 Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- FORMULARIO DE PERFIL -->
+    <div class="profile-wrapper">
+        <div class="profile-card">
+            <h1>Información Personal</h1>
+            <form id="perfilForm">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" value="Juan Pérez" required>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" value="juan.perez@email.com" required>
+
+                <label for="rfc">RFC</label>
+                <input type="text" id="rfc" value="JUPE800101ABC" required>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" value="555-123-4567">
+
+                <br><hr>
+                <div class="botones">
+                    <button type="submit" class="guardar">Guardar Cambios</button>
+                    <button type="button" class="cancelar"
+                        onclick="window.location.href='perfil.html'">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Auditorias en linea | Todos los derechos reservados
+    </footer>
+
+    <script src="JS/perfil.js"></script>
+</body>
+
+</html>

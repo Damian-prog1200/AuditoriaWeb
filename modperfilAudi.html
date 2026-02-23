@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modificar Perfil del Auditor | Portal Contable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/perfil.css" />
+  <script defer src="JS/produccion.js"></script>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+ <nav class="navbar">
+        <h2>Mis Solicitudes</h2>
+
+        <div class="subbar">
+            <div class="acciones-superior">
+                <button class="logout" onclick="window.location.href='perfilAudi.html'">Regresar</button>
+            </div>
+            <!-- Menú desplegable -->
+
+            <div class="dropdown" id="userMenu">
+                <button class="dropbtn" id="menuBtn">Opciones</button>
+                <div class="dropdown-content" id="menuContent">
+                    <a href="perfilAudi.html">👤 Mi Perfil</a>
+                    <a href="ayuda.html">❓ Acerca de</a>
+                    <a href="index.html" class="logout-option">🚪 Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  <!-- FORMULARIO DE EDICIÓN -->
+  <div class="profile-wrapper">
+    <div class="profile-card edit">
+      <div class="avatar-section">
+        <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="Avatar Auditor" class="avatar">
+        <h1>Lic. María López</h1>
+        <p class="rol">Auditor Senior</p>
+      </div>
+
+      <div class="info-section">
+        <h3>Editar información del auditor</h3>
+
+        <form class="info-grid" action="perfil-auditor.html" method="post">
+          <label><strong>ID de Auditor:</strong></label>
+          <input type="text" name="id_auditor" value="A-2024-015" readonly />
+
+          <label><strong>Correo institucional:</strong></label>
+          <input type="email" name="correo" value="maria.lopez@auditoriasmx.com" required />
+
+          <label><strong>RFC:</strong></label>
+          <input type="text" name="rfc" value="MALO850202XY3" required />
+
+          <label><strong>Cédula profesional:</strong></label>
+          <input type="text" name="cedula" value="12547896" required />
+
+          <label><strong>Teléfono:</strong></label>
+          <input type="tel" name="telefono" value="55-9876-5432" required />
+
+          <label><strong>Especialidad:</strong></label>
+          <input type="text" name="especialidad" value="Auditoría fiscal y financiera" required />
+
+          <label><strong>Zona asignada:</strong></label>
+          <input type="text" name="zona" value="Ciudad de México y área metropolitana" required />
+        </form>
+
+        <div class="acciones">
+          <button class="guardar" type="submit">Guardar cambios</button>
+          <button class="cancelar" onclick="window.location.href='perfilAudi.html'">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Auditorías en línea | Todos los derechos reservados
+  </footer>
+</body>
+
+</html>

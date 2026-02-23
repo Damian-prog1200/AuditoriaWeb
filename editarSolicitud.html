@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Solicitud</title>
+    <link rel="stylesheet" href="CSS/analisissolicitud.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="form-card">
+            <h1>✏️ Editar Solicitud</h1>
+
+            <form id="formSolicitud" enctype="multipart/form-data">
+
+                <label for="tipo">Tipo de Servicio</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Seleccione...</option>
+                    <option value="Declaración Fiscal">Declaración Fiscal</option>
+                    <option value="Auditoría">Auditoría</option>
+                    <option value="Consultoría Contable">Consultoría Contable</option>
+                </select>
+
+                <label for="detalle">Detalle</label>
+                <textarea id="detalle" name="detalle" rows="4" required></textarea>
+
+                <label for="archivo">Archivo PDF</label>
+                <input type="file" id="archivoPDF" name="archivoPDF" accept=".pdf">
+                <small id="archivoNombre" style="color:#555; display:block; margin-top:5px;"></small>
+
+                <button type="submit">Guardar cambios</button>
+            </form>
+
+            <div class="acciones">
+                <a href="panel-cliente.html">⬅ Volver</a>
+            </div>
+        </div>
+    </div>
+    <!-- 🔵 Modal de Confirmación Personalizado -->
+  <div id="modalConfirmacion" class="overlay-modal" style="display: none;">
+    <div class="modal-contenido">
+      <h3 id="tituloModal">Confirmación</h3>
+      <p id="modalMensaje"></p>
+
+      <div class="modal-botones">
+        <button id="btnAceptarModal" class="btn-aceptar">Aceptar</button>
+        <button id="btnCancelarModal" class="btn-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+    <script src="JS/AnalisisSolicitud/editarSolicitud.js"></script>
+</body>
+</html>

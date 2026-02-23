@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nueva Solicitud | Portal Contable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/analisissolicitud.css" />
+</head>
+
+<body>
+  <div class="form-wrapper">
+    <div class="form-card">
+      <h1 id="titulo-formulario">📄 Nueva Solicitud</h1>
+
+      <form id="formSolicitud" enctype="multipart/form-data" method="POST">
+        <label for="servicio">Tipo de Servicio</label>
+        <select id="servicio" name="servicio" required>
+          <option value="">Seleccione...</option>
+          <option value="Declaración Fiscal">Declaración Fiscal</option>
+          <option value="Auditoría">Auditoría</option>
+          <option value="Consultoría Contable">Consultoría Contable</option>
+        </select>
+
+        <label for="detalle">Detalle</label>
+        <textarea id="detalle" name="detalle" rows="4" placeholder="Describe brevemente tu solicitud..."
+          required></textarea>
+
+        <label for="archivo">Documento Contable (PDF)</label>
+        <input type="file" id="archivoPDF" name="archivoPDF" accept=".pdf" />
+
+        <div id="archivoActual" style="display: none; margin-top: 10px;">
+          <a id="linkPDF" href="#" target="_blank" class="btn-ver-pdf">Ver archivo PDF</a>
+        </div>
+
+        <button type="submit" id="btnEnviar">Crear Solicitud</button>
+      </form>
+
+      <div class="acciones">
+        <a href="panel-cliente.html">Volver al Panel</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Auditorías en Línea | Todos los derechos reservados</footer>
+  <!-- 🔵 Modal de Confirmación Personalizado -->
+  <div id="modalConfirmacion" class="overlay-modal" style="display: none;">
+    <div class="modal-contenido">
+      <h3 id="tituloModal">Confirmación</h3>
+      <p id="modalMensaje"></p>
+
+      <div class="modal-botones">
+        <button id="btnAceptarModal" class="btn-aceptar">Aceptar</button>
+        <button id="btnCancelarModal" class="btn-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/AnalisisSolicitud/solicitud.js"></script>
+</body>
+
+</html>

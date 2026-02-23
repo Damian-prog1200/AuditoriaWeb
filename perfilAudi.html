@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil del Auditor | Portal Contable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/perfil.css" />
+    <script defer src="JS/produccion.js"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2>Bienvenido Auditor</h2>
+
+        <div class="subbar">
+            <div class="acciones-superior">
+                <button class="logout" onclick="window.location.href='panel-auditor.html'">Regresar</button>
+            </div>
+            <!-- Menú desplegable -->
+            <div class="dropdown" id="userMenu">
+                <button class="dropbtn" id="menuBtn">Opciones</button>
+                <div class="dropdown-content" id="menuContent">
+                    <a href="perfilAudi.html">👤 Mi Perfil</a>
+                    <a href="ayuda.html">❓ Acerca de</a>
+                    <a href="index.html" class="logout-option">🚪 Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PERFIL DE AUDITOR -->
+    <div class="profile-wrapper">
+        <div class="profile-card view">
+            <div class="avatar-section">
+                <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="Avatar Auditor" class="avatar">
+                <h1>Lic. María López</h1>
+                <p class="rol">Auditor Senior</p>
+            </div>
+
+            <div class="info-section">
+                <h3>Información del Auditor</h3>
+                <div class="info-grid">
+                    <p><strong>ID de Auditor:</strong> A-2024-015</p>
+                    <p><strong>Correo institucional:</strong> maria.lopez@auditoriasmx.com</p>
+                    <p><strong>RFC:</strong> MALO850202XY3</p>
+                    <p><strong>Cédula profesional:</strong> 12547896</p>
+                    <p><strong>Teléfono:</strong> 55-9876-5432</p>
+                    <p><strong>Especialidad:</strong> Auditoría fiscal y financiera</p>
+                    <p><strong>Zona asignada:</strong> Ciudad de México y área metropolitana</p>
+                    <p><strong>Fecha de ingreso:</strong> 3 de enero de 2023</p>
+                    <p><strong>Último acceso:</strong> 12 de octubre de 2025 - 20:45</p>
+                </div>
+
+                <div class="acciones">
+                    <button class="editar" onclick="window.location.href='modperfilAudi.html'">Modificar
+                        información</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Auditorías en línea | Todos los derechos reservados
+    </footer>
+</body>
+
+</html>
